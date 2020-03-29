@@ -72,16 +72,19 @@ class App extends Component {
   };
 
   onInputChange = event => {
-    this.setState({ input: event.target.value });
+      this.setState({ input: event.target.value });
   };
 
   onButtonSubmit = () => {
-    this.setState({ imageUrl: this.state.input });
+
+    const { input, user } = this.state;
+    if(input.length > 0){
+      this.setState({imageUrl : input});
     fetch("https://sheltered-castle-52208.herokuapp.com/imageurl", {
       method: "post",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        input: this.state.input
+        input: input
       })
     })
       .then(responses => responses.json())
@@ -91,7 +94,7 @@ class App extends Component {
             method: "put",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-              id: this.state.user.id
+              id: user.id
             })
           })
             .then(response => response.json())
@@ -105,6 +108,7 @@ class App extends Component {
             
         }
       });
+    }
   };
 
   onRouteChange = route => {
