@@ -14,10 +14,10 @@
     "clarifai": "^2.9.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "knex": "^0.20.11",
+    "knex": "^0.20.15",
     "pg": "^7.18.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.2"
+    "nodemon": "^2.0.4"
   }
 }

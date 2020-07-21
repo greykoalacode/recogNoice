@@ -7,21 +7,8 @@ import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
 import ImageLinkForm from "./components/ImageLinkForm/ImageLinkForm";
 import Rank from "./components/Rank/Rank";
 import "./App.css";
-// import Particles from "react-particles-js";
 
-// initialize with your api key. This will also work in your browser via http://browserify.org/
 
-// const particlesOptions = {
-//   particles: {
-//     number: {
-//       value: 30,
-//       density: {
-//         enable: true,
-//         value_area: 800
-//       }
-//     }
-//   }
-// };
 const initialState = {
   input: "",
   imageUrl: "",
@@ -34,7 +21,7 @@ const initialState = {
     email: "",
     entries: 0,
     joined: ""
-  }
+  },
 };
 class App extends Component {
   constructor() {
@@ -52,6 +39,10 @@ class App extends Component {
       }
     });
   };
+
+  // theme = (isDarkMode) ? "dark":"light";
+  // onToggleMode = () => (this.setState(!this.state.isDarkMode));
+ 
 
   calculateFaceLocation = data => {
     const clarifaiFace =
@@ -120,9 +111,9 @@ class App extends Component {
     }
     this.setState({ route: route });
   };
-
+  
   render() {
-    const { isSignedIn, imageUrl, route, box } = this.state;
+    const { isSignedIn, imageUrl, route, box,} = this.state;
     return (
       <div className="App">
         

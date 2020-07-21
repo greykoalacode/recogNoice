@@ -3,7 +3,7 @@ import React from 'react';
 const Navigation =({ onRouteChange , isSignedIn }) => {
     if(isSignedIn){
         return (
-        <div>
+        <div className="">
         <h1>RecogNoice</h1>
         <nav style={{ display: 'flex', justifyContent: 'center' }}>
             <p onClick={() => onRouteChange('signout')} className='f3 link dim black  pa3 pointer'>
