@@ -7,11 +7,11 @@
   grid-template-columns: 1fr 1fr;
 }
  input {
-  border-radius: 10px;
+  border-radius: 0.1em;
 }
 .card{
   background-color:#FFFF82;
-  border-radius: 25px;
+  border-radius: 0.35em;
   padding: 40px;
   width: 25em;
 }

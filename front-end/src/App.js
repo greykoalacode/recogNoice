@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Navigation from "./components/Navigation/Navigation";
-import Logo from "./components/Logo/Logo";
 import Signin from "./components/Signin/Signin";
 import Register from "./components/Register/Register";
 import FaceRecognition from "./components/FaceRecognition/FaceRecognition";
