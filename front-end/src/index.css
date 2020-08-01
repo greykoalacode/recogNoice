@@ -4,6 +4,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#19A974;
+  background-color: #5E2CA5;
+  background-color: #F4F4F4;
+  background-color: #9EEBCF;
 }
 button {
   cursor: pointer;

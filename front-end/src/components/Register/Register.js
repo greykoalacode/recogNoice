@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from '../Modal/Modal';
 
 class Register extends React.Component{
     constructor(props){
@@ -6,7 +7,8 @@ class Register extends React.Component{
         this.state ={
             email: '',
             password: '',
-            name: ''
+            name: '',
+            isError: false
         }
     }
     onNameChange =(event) => {
@@ -19,6 +21,8 @@ class Register extends React.Component{
     onPasswordChange =(event)=> {
         this.setState({password : event.target.value})
     }
+    
+    onErrorChange = () => this.setState({isError: !this.state.isError});
 
     onSubmitSignIn =()=>{
         fetch('https://sheltered-castle-52208.herokuapp.com/register',{
@@ -36,19 +40,27 @@ class Register extends React.Component{
                     this.props.loadUser(user);
                     this.props.onRouteChange('home');
                 }
+                else {
+                    this.onErrorChange();
+                }
             })
         }      
     render(){
         // const{ onRouteChange } = this.props;
         return(
-            <main  className="card center">
+            <main  className="card center shadow-3">
                 <div  className="measure">
+                    {
+                        this.state.isError ? (
+                            <Modal message="Error" type="error" />
+                        ) : ('')
+                    }
                     <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
                     <legend  className="center title">Register</legend>
                     <div  className="mt3">
                         <label  className="db fw6 lh-copy f6" htmlFor="name">Name</label>
                         <input  
-                        className="pa2 input-reset ba b--black bg-transparent hover-bg-green hover-white w-100" 
+                        className="pa2 input-reset ba b--black bg-transparent hover-bg-white w-100" 
                         type="text" 
                         name="name"  
                         id="name"
@@ -57,7 +69,7 @@ class Register extends React.Component{
                     <div  className="mt3">
                         <label  className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                         <input  
-                        className="pa2 input-reset ba b--black bg-transparent hover-bg-green hover-white w-100" 
+                        className="pa2 input-reset ba b--black bg-transparent hover-bg-white w-100" 
                         type="email" 
                         name="email-address"  
                         id="email-address"
@@ -66,7 +78,7 @@ class Register extends React.Component{
                     <div  className="mv3">
                         <label  className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                         <input  
-                        className="b  pa2 input-reset ba  b--black bg-transparent hover-bg-green hover-white w-100" 
+                        className="b  pa2 input-reset ba  b--black bg-transparent hover-bg-white w-100" 
                         type="password" 
                         name="password"  
                         id="password"

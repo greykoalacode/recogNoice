@@ -10,7 +10,9 @@
   border-radius: 0.1em;
 }
 .card{
-  background-color:#FFFF82;
+  /* background-color:#FFFF82;
+  background-color: #9EEBCF; */
+  background-color: white;
   border-radius: 0.35em;
   padding: 40px;
   width: 25em;

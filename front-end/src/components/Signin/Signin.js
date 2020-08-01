@@ -45,21 +45,20 @@ class Signin extends React.Component{
         const { onRouteChange } = this.props;
         return(
         
-        <main  className="card center">
+        <main  className="card center shadow-3">
+            <div  className="measure">
                 {
                     this.state.isError ? (
-                        <Modal message="error" type="error" />
-                    )
-                : (
-                    
-                    <div  className="measure">
-                    <fieldset id="sign_up"  className="ba b--transparent ph0 mh0">
+                        <Modal message="Error" type="error" />
+                    ) : ('')
+                }
+                <fieldset id="sign_up"  className="ba b--transparent ph0 mh0">
                 <legend  className="center title">Sign In</legend>
                 <div  className="mt3">
                     <label  className="db fw6 lh-copy f6" htmlFor="email-address">Email</label>
                     <input 
                     onChange={this.onEmailChange} 
-                    className="pa2  input-reset ba b--black bg-transparent hover-bg-green hover-white w-100"
+                    className="pa2 input-reset ba b--black bg-transparent hover-bg-white w-100"
                     type="email"
                     name="email-address"
                     id="email-address"/>
@@ -67,7 +66,7 @@ class Signin extends React.Component{
                 <div  className="mv3">
                     <label  className="db fw6 lh-copy f6" htmlFor="password">Password</label>
                     <input  
-                    className="b  pa2 input-reset ba b--black bg-transparent hover-bg-green hover-white w-100" 
+                    className="b  pa2 input-reset ba b--black bg-transparent hover-bg-white w-100" 
                     type="password" 
                     name="password"  
                     id="password"
@@ -75,20 +74,16 @@ class Signin extends React.Component{
                 </div>
                 </fieldset>
                 <div  className="container">
-                <input 
-                    onClick={this.onSubmitSignIn} 
-                    className="b  ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
-                    type="submit" 
-                    value="Sign in"
-                    />
-                <p  onClick={()=> onRouteChange('register')} className="f6 pointer link dim black db">Register</p>
+                    <input 
+                        onClick={this.onSubmitSignIn} 
+                        className="b  ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
+                        type="submit" 
+                        value="Sign in"
+                        />
+                    <p  onClick={()=> onRouteChange('register')} className="f6 pointer link dim black db">Register</p>
                 </div>
-                </div>
-            )
-            }
+            </div>
         </main>
-
-   
         );
     }
 } 
